@@ -4,7 +4,8 @@ sx:	.byte 	0               ;inizio array
 dx:	.byte	4		;lunghezza array -1
 
 .text
-start:	LB r1, sx(r0)		;carica in r1, il valore di sx
+start:	
+	LB r1, sx(r0)		;carica in r1, il valore di sx
 	LB r2, dx(r0)		;carica in r2, il valore di dx
 	
 	ADD r6, r0, r1		;assegna ad i il valore di sx
@@ -49,5 +50,5 @@ start:	LB r1, sx(r0)		;carica in r1, il valore di sx
 	SB r13, a(r2)		;scrive su r13 il valore dell'array nella posizione 'i'
 	SB r14, a(r6)		;scrive su r14 il valore dell'array nella posizione 'j'
 
-stop:	HALT                    ;interruzione programma
+	HALT                    ;interruzione programma
 
